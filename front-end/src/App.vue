@@ -1,47 +1,46 @@
 <template>
-  <div id="app">
-<!--    <div id="nav">-->
+  <div id="app" class="my-5">
+    <div id="nav">
 <!--      <router-link to="/">Home</router-link> |-->
 <!--      <router-link to="/about">About</router-link>-->
-<!--    </div>-->
-<!--    <router-view/>-->
-<!--      <div>-->
-        <b-navbar type="dark" variant="dark">
-          <b-navbar-nav>
-            <b-nav-item href="/"><router-link to="/">Home</router-link></b-nav-item>
-            <b-nav-item href="/about"><router-link to="/about">About</router-link></b-nav-item>
-            <!-- Navbar dropdowns -->
-<!--            <b-nav-item-dropdown text="Lang" right>-->
-<!--              <b-dropdown-item href="#">EN</b-dropdown-item>-->
-<!--              <b-dropdown-item href="#">ES</b-dropdown-item>-->
-<!--              <b-dropdown-item href="#">RU</b-dropdown-item>-->
-<!--              <b-dropdown-item href="#">FA</b-dropdown-item>-->
-<!--            </b-nav-item-dropdown>-->
-          </b-navbar-nav>
-        </b-navbar>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <router-link to="/" class="nav-link" aria-current="page">Home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/about" class="nav-link">About</router-link>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exemple page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exemple page</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </div>
+    <router-view/>
       </div>
-<!--  </div>-->
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-b-nav-item  {
-  padding: 30px;
-}
-
-b-nav-item  {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-b-nav-item  a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
