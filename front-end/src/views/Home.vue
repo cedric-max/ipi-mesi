@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <JumbotronHome></JumbotronHome>
+    <b-container class="bv-example-row">
+      <b-row>
+        <OfferCard class="col-12"></OfferCard>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import JumbotronHome from '@/components/JumbotronHome.vue'
+import OfferCard from '@/components/OfferCard.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    JumbotronHome,
+    OfferCard
   }
 }
 </script>
