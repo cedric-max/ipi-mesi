@@ -15,8 +15,7 @@ public class NumerAltApplication {
 		return "Hello from Spring";
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(NumerAltApplication.class, args);
+	public static void main(String[] args) { SpringApplication.run(NumerAltApplication.class, args);
 	}
 
 }

@@ -1,9 +1,9 @@
 INSERT INTO recruteur (id_recruteur,prenom,nom,email,photo,libelle_entreprise) VALUES
 (1,'Homer', 'Simpson', 'homer@gmail.com', null,'CEGID'),
 (2,'Eric', 'Cartman', 'eric@gmail.com', null,'DALKIA'),
-(3,'Jake', 'Peralta', 'jake@gmail.com', null, 'INESCRM')
+(3,'Jake', 'Peralta', 'jake@gmail.com', null, 'INESCRM');
 
------------------------------------------------------------------------------------------------------------
+
 
 INSERT INTO offre (id_offre,titre,reference,nom_entreprise,date_creation,date_fin_validite,description,ville,niveau_diplome_vise,id_recruteur)
 VALUES

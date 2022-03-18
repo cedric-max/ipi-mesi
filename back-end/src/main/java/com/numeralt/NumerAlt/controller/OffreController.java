@@ -1,9 +1,7 @@
 package com.numeralt.NumerAlt.controller;
 
 import com.numeralt.NumerAlt.entity.Offre;
-
-
-import com.numeralt.NumerAlt.repository.OffreRepository;
+import com.numeralt.NumerAlt.service.OffreServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +18,7 @@ import java.util.Optional;
 public class OffreController {
 
     @Autowired
-    private OffreRepository offreRepository;
-
-
+    private OffreServiceInterface offreService;
 
     //  Permet de récupérer une offre avec son iD
     @RequestMapping(
@@ -30,14 +26,8 @@ public class OffreController {
             value = "/{id_offre}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-
     public Offre getOfferById(@PathVariable Long id_offre) {
-        Optional<Offre> offre = offreRepository.findById(id_offre);
-        if (offre.isEmpty()) {
-            throw new EntityNotFoundException("L'offre avec l'identifiant " + id_offre + " n'existe pas !");
-        }
-
-        return offre.get();
+        return offreService.findById(id_offre).get();
     }
 
     //  Permet de récupérer l'intégralité des offres
@@ -46,10 +36,8 @@ public class OffreController {
             value = "/",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-
     public List<Offre> findAll() {
-        List<Offre> offreResponse = offreRepository.findAll();
-        return offreResponse;
+        return offreService.findAll();
     }
 }
 
