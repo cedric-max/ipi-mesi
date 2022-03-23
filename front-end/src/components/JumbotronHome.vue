@@ -1,10 +1,10 @@
 <template>
   <header>
         <!-- Jumbotron -->
-    <div class="p-5 text-center bg-light" style="margin-top: 58px;">
-      <h1 class="mb-3">Heading</h1>
-      <h4 class="mb-3">Subheading</h4>
-      <a class="btn btn-primary" href="" role="button">Call to action</a>
+      <b-jumbotron class="text-center" header="Numerl'Alt" lead="Quisque eget ex sit amet ex ultrices commodo. Curabitur in magna quis lectus ultricies pulvinar ut eu sapien">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eleifend vel velit sit amet mollis. Nam pellentesque porta leo, sit amet facilisis augue semper vitae. Nam vitae dapibus odio</p>
+        <b-button variant="primary" href="#">More Info</b-button>
+      </b-jumbotron>
     </div>
     <!-- Jumbotron -->
   </header>
