@@ -5,7 +5,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eleifend vel velit sit amet mollis. Nam pellentesque porta leo, sit amet facilisis augue semper vitae. Nam vitae dapibus odio</p>
         <b-button variant="primary" href="#">More Info</b-button>
       </b-jumbotron>
-    </div>
     <!-- Jumbotron -->
   </header>
 </template>
