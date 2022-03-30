@@ -12,8 +12,9 @@
             consectetur tortor. Etiam
             rutrum placerat
           </p>
-          <a class="btn" href="">Créer
-            un compte</a>
+          <p class="btn" >
+            <router-link to="/signup" class="nav-link">Créer un compte</router-link>
+          </p>
         </div>
       </div>
       <div class="col-right">
@@ -110,23 +111,6 @@ body {
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, .1);
 }
-
-.credit {
-  position: relative;
-  margin: 25px auto 0 auto;
-  width: 100%;
-  text-align: center;
-  color: #666666;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.credit a {
-  color: #222222;
-  font-size: 16px;
-  font-weight: 600;
-}
-
 /* * * * * Login Form CSS * * * * */
 h2 {
   margin: 0 0 15px 0;
@@ -211,13 +195,13 @@ p {
   margin: 0;
 }
 
-.login-form p a {
+.login-form p router-link {
   color: #4CAF50;
   font-size: 14px;
   text-decoration: none;
 }
 
-.login-form p:last-child a:last-child {
+.login-form p:last-child router-link:last-child {
   float: right;
 }
 
@@ -266,5 +250,4 @@ p {
   color: #4CAF50;
   background: #ffffff;
 }
-
 </style>
