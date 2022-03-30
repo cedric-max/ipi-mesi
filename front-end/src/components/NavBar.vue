@@ -6,6 +6,7 @@
       <ul class="pt-5">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/connection">Connection</router-link></li>
       </ul>
     </nav>
   </div>

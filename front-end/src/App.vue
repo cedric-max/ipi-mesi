@@ -26,7 +26,10 @@
                 <router-link to="/about" class="nav-link">About</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Exemple page</a>
+                <router-link to="/signup" class="nav-link">Inscription</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/signin" class="nav-link">Connection</router-link>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Exemple page</a>
