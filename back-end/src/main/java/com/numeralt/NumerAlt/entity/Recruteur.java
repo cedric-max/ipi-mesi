@@ -1,22 +1,16 @@
 package com.numeralt.NumerAlt.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "recruteur")
 public class Recruteur {
 
-    /*
-    * `id_recruteur` INT NOT NULL AUTO_INCREMENT,
-  `prenom` VARCHAR(45) NOT NULL,
-  `nom` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `photo` VARCHAR(100) NULL,
-  `libelle_entreprise` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_recruteur`));*/
+
     @Id
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
-    private Long id_recruteur;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_recruteur")
+    private Long idRecruteur;
 
     private String prenom;
 
@@ -26,17 +20,21 @@ public class Recruteur {
 
     private String photo;
 
-    private String libelle_entreprise;
+    @Column(name = "libelle_entreprise")
+    private String libelleEntreprise;
+
+    private String motDePasse;
+
 
     //GETTER AND SETTER
 
 
-    public Long getId_recruteur() {
-        return id_recruteur;
+    public Long getIdRecruteur() {
+        return idRecruteur;
     }
 
-    public void setId_recruteur(Long id_recruteur) {
-        this.id_recruteur = id_recruteur;
+    public void setIdRecruteur(Long idRecruteur) {
+        this.idRecruteur = idRecruteur;
     }
 
     public String getPrenom() {
@@ -71,11 +69,21 @@ public class Recruteur {
         this.photo = photo;
     }
 
-    public String getLibelle_entreprise() {
-        return libelle_entreprise;
+    public String getLibelleEntreprise() {
+        return libelleEntreprise;
     }
 
-    public void setLibelle_entreprise(String libelle_entreprise) {
-        this.libelle_entreprise = libelle_entreprise;
+    public void setLibelleEntreprise(String libelleEntreprise) {
+        this.libelleEntreprise = libelleEntreprise;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
     }
 }
+
+

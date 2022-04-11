@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface OffreServiceInterface {
 
-    Optional<Offre> findById(Long id_offre);
+    Optional<Offre> findById(Long idOffre);
+
     List<Offre> findAll();
 }

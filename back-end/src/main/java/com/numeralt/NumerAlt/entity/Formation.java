@@ -1,10 +1,10 @@
 package com.numeralt.NumerAlt.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "formation")
 public class Formation {
     /*
     * `id_formation` INT NOT NULL AUTO_INCREMENT,
@@ -15,59 +15,64 @@ public class Formation {
   `ecole` VARCHAR(45) NOT NULL,*/
     @Id
     @GeneratedValue( strategy= GenerationType.IDENTITY )
-    private Long id_formation;
+    @Column(name = "id_formation")
+    private Long idFormation;
 
-    private Date date_debut;
+    @Column(name = "date_debut")
+    private Date dateDebut;
 
-    private Date date_fin;
+    @Column(name = "date_fin")
+    private Date dateFin;
 
-    private String libelle_formation;
+    @Column(name = "libelle_formation")
+    private String libelleFormation;
 
-    private String description_formation;
+    @Column(name = "description_formation")
+    private String descriptionFormation;
 
     private String ecole;
 
     //GETTER AND SETTER
 
 
-    public Long getId_formation() {
-        return id_formation;
+    public Long getIdFormation() {
+        return idFormation;
     }
 
-    public void setId_formation(Long id_formation) {
-        this.id_formation = id_formation;
+    public void setIdFormation(Long idFormation) {
+        this.idFormation = idFormation;
     }
 
-    public Date getDate_debut() {
-        return date_debut;
+    public Date getDateDebut() {
+        return dateDebut;
     }
 
-    public void setDate_debut(Date date_debut) {
-        this.date_debut = date_debut;
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
     }
 
-    public Date getDate_fin() {
-        return date_fin;
+    public Date getDateFin() {
+        return dateFin;
     }
 
-    public void setDate_fin(Date date_fin) {
-        this.date_fin = date_fin;
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
     }
 
-    public String getLibelle_formation() {
-        return libelle_formation;
+    public String getLibelleFormation() {
+        return libelleFormation;
     }
 
-    public void setLibelle_formation(String libelle_formation) {
-        this.libelle_formation = libelle_formation;
+    public void setLibelleFormation(String libelleFormation) {
+        this.libelleFormation = libelleFormation;
     }
 
-    public String getDescription_formation() {
-        return description_formation;
+    public String getDescriptionFormation() {
+        return descriptionFormation;
     }
 
-    public void setDescription_formation(String description_formation) {
-        this.description_formation = description_formation;
+    public void setDescriptionFormation(String descriptionFormation) {
+        this.descriptionFormation = descriptionFormation;
     }
 
     public String getEcole() {

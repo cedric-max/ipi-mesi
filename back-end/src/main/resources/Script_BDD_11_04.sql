@@ -1,14 +1,15 @@
 CREATE SCHEMA IF NOT EXISTS `mesi`;
 
 DROP TABLE IF EXISTS `mesi`.`postuler`;
-DROP TABLE IF EXISTS `mesi`.`etre_en_contact`;
+DROP TABLE IF EXISTS `mesi`.`etreEnContact`;
 DROP TABLE IF EXISTS `mesi`.`detenir`;
 DROP TABLE IF EXISTS `mesi`.`avoir`;
 DROP TABLE IF EXISTS `mesi`.`offre`;
 DROP TABLE IF EXISTS `mesi`.`recruteur`;
 DROP TABLE IF EXISTS `mesi`.`candidat`;
 DROP TABLE IF EXISTS `mesi`.`formation`;
-DROP TABLE IF EXISTS `mesi`.`experience_pro`;
+DROP TABLE IF EXISTS `mesi`.`experiencePro`;
+
 
 CREATE TABLE `mesi`.`recruteur` (
   `id_recruteur` INT NOT NULL AUTO_INCREMENT,
@@ -17,7 +18,8 @@ CREATE TABLE `mesi`.`recruteur` (
   `email` VARCHAR(45) NOT NULL,
   `photo` VARCHAR(100) NULL,
   `libelle_entreprise` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_recruteur`));
+  `mot_de_passe` VARCHAR(45) NULL,
+   PRIMARY KEY (`id_recruteur`));
   
   CREATE TABLE `mesi`.`offre` (
   `id_offre` INT NOT NULL AUTO_INCREMENT,
@@ -30,8 +32,14 @@ CREATE TABLE `mesi`.`recruteur` (
   `ville` VARCHAR(45) NOT NULL,
   `niveau_diplome_vise` VARCHAR(45) NULL,
   `id_recruteur` INT NOT NULL,
+  `logo` VARCHAR(45) NULL,
+  `profil_souhaite` VARCHAR(2000) NULL,
+  `profil_minimum` VARCHAR(2000) NULL,
+  `connaissance_necessaire` VARCHAR(1000) NULL,
+  `outil_necessaire` VARCHAR(500) NULL,
+  `salaire_indicatif` INT NOT NULL,
   PRIMARY KEY (`id_offre`),
-  INDEX `id_recruteur_idx` (`id_recruteur` ASC) VISIBLE,
+  INDEX `id_recruteurIdx` (`id_recruteur` ASC) VISIBLE,
   CONSTRAINT `id_recruteur`
     FOREIGN KEY (`id_recruteur`)
     REFERENCES `mesi`.`recruteur` (`id_recruteur`)
@@ -46,12 +54,38 @@ CREATE TABLE `mesi`.`recruteur` (
   `photo` VARCHAR(100) NULL,
   `date_naissance` DATE NOT NULL,
   `adresse` VARCHAR(100) NOT NULL,
-  `permis de conduire` TINYINT NOT NULL,
+  `permis_conduire` TINYINT NOT NULL,
   `soft_skills` VARCHAR(200) NULL,
   `centres_interet` VARCHAR(200) NULL,
   `site_internet` VARCHAR(75) NULL,
   `lien_github` VARCHAR(75) NULL,
+  `mot_de_passe` VARCHAR(45) NULL,
   PRIMARY KEY (`id_candidat`));
+  
+  CREATE TABLE `mesi`.`technologie`(
+    `id_technologie` INT NOT NULL AUTO_INCREMENT,
+	`libelle_technologie` VARCHAR(100) NOT NULL,
+     PRIMARY KEY (`id_technologie`));
+     
+  CREATE TABLE `mesi`.`offreTechnologie`(
+  `id_offre_technologie` INT NOT NULL AUTO_INCREMENT,
+  `id_offre` INT NOT NULL,
+  `id_technologie` INT NOT NULL,
+  PRIMARY KEY (`id_offre_technologie`),
+   INDEX `id_offreIdx` (`id_offre` ASC) VISIBLE,
+   INDEX `id_technologieIdx` (`id_technologie` ASC) VISIBLE,
+  CONSTRAINT `id_offre`
+    FOREIGN KEY (`id_offre`)
+    REFERENCES `mesi`.`offre` (`id_offre`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_technologie`
+    FOREIGN KEY (`id_technologie`)
+    REFERENCES `mesi`.`technologie` (`id_technologie`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+  
+
   
   CREATE TABLE `mesi`.`formation` (
   `id_formation` INT NOT NULL AUTO_INCREMENT,
@@ -62,7 +96,7 @@ CREATE TABLE `mesi`.`recruteur` (
   `ecole` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_formation`));
   
-  CREATE TABLE `mesi`.`experience_pro` (
+  CREATE TABLE `mesi`.`experiencePro` (
   `id_experience_pro` INT NOT NULL AUTO_INCREMENT,
   `date_debut` VARCHAR(45) NOT NULL,
   `date_fin` VARCHAR(45) NOT NULL,
@@ -74,30 +108,30 @@ CREATE TABLE `mesi`.`recruteur` (
 CREATE TABLE `mesi`.`postuler` (
   `id_offre` INT NOT NULL,
   `id_candidat` INT NOT NULL,
-  INDEX `id_offre_idx` (`id_offre` ASC) VISIBLE,
-  INDEX `id_candidat_idx` (`id_candidat` ASC) VISIBLE,
-  CONSTRAINT `postuler_id_offre`
+  INDEX `id_offreIdx` (`id_offre` ASC) VISIBLE,
+  INDEX `id_candidatIdx` (`id_candidat` ASC) VISIBLE,
+  CONSTRAINT `postulerid_offre`
     FOREIGN KEY (`id_offre`)
     REFERENCES `mesi`.`offre` (`id_offre`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `postuler_id_candidat`
+  CONSTRAINT `postulerid_candidat`
     FOREIGN KEY (`id_candidat`)
     REFERENCES `mesi`.`candidat` (`id_candidat`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE TABLE `mesi`.`etre_en_contact` (
+CREATE TABLE `mesi`.`etreEnContact` (
   `id_recruteur` INT NOT NULL,
   `id_candidat` INT NOT NULL,
-  INDEX `id_recruteur_idx` (`id_recruteur` ASC) VISIBLE,
-  INDEX `id_candidat_idx` (`id_candidat` ASC) VISIBLE,
-  CONSTRAINT `contact_id_recruteur`
+  INDEX `id_recruteurIdx` (`id_recruteur` ASC) VISIBLE,
+  INDEX `id_candidatIdx` (`id_candidat` ASC) VISIBLE,
+  CONSTRAINT `contactid_recruteur`
     FOREIGN KEY (`id_recruteur`)
     REFERENCES `mesi`.`recruteur` (`id_recruteur`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `contact_id_candidat`
+  CONSTRAINT `contactid_candidat`
     FOREIGN KEY (`id_candidat`)
     REFERENCES `mesi`.`candidat` (`id_candidat`)
     ON DELETE NO ACTION
@@ -106,9 +140,9 @@ CREATE TABLE `mesi`.`etre_en_contact` (
 CREATE TABLE `mesi`.`detenir` (
   `id_candidat` INT NOT NULL,
   `id_formation` INT NOT NULL,
-  INDEX `id_candidat_idx` (`id_candidat` ASC) VISIBLE,
-  INDEX `id_formation_idx` (`id_formation` ASC) VISIBLE,
-  CONSTRAINT `detenir_id_candidat`
+  INDEX `id_candidatIdx` (`id_candidat` ASC) VISIBLE,
+  INDEX `id_formationIdx` (`id_formation` ASC) VISIBLE,
+  CONSTRAINT `detenirid_candidat`
     FOREIGN KEY (`id_candidat`)
     REFERENCES `mesi`.`candidat` (`id_candidat`)
     ON DELETE NO ACTION
@@ -120,20 +154,17 @@ CREATE TABLE `mesi`.`detenir` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE `mesi`.`avoir` (
-  `avoir_id_candidat` INT NOT NULL,
-  `avoir_id_experience` INT NOT NULL,
-  INDEX `avoir_id_candidat_idx` (`avoir_id_candidat` ASC) VISIBLE,
-  INDEX `avoir_id_experience_idx` (`avoir_id_experience` ASC) VISIBLE,
-  CONSTRAINT `avoir_id_candidat`
-    FOREIGN KEY (`avoir_id_candidat`)
+  `avoirid_candidat` INT NOT NULL,
+  `avoirid_experience` INT NOT NULL,
+  INDEX `avoirid_candidatIdx` (`avoirid_candidat` ASC) VISIBLE,
+  INDEX `avoirid_experienceIdx` (`avoirid_experience` ASC) VISIBLE,
+  CONSTRAINT `avoirid_candidat`
+    FOREIGN KEY (`avoirid_candidat`)
     REFERENCES `mesi`.`candidat` (`id_candidat`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `avoir_id_experience`
-    FOREIGN KEY (`avoir_id_experience`)
-    REFERENCES `mesi`.`experience_pro` (`id_experience_pro`)
+  CONSTRAINT `avoirid_experience`
+    FOREIGN KEY (`avoirid_experience`)
+    REFERENCES `mesi`.`experiencePro` (`id_experience_pro`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-
-

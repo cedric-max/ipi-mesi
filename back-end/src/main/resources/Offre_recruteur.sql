@@ -1,11 +1,11 @@
-INSERT INTO recruteur (id_recruteur,prenom,nom,email,photo,libelle_entreprise) VALUES
-(1,'Homer', 'Simpson', 'homer@gmail.com', null,'CEGID'),
-(2,'Eric', 'Cartman', 'eric@gmail.com', null,'DALKIA'),
-(3,'Jake', 'Peralta', 'jake@gmail.com', null, 'INESCRM');
+INSERT INTO recruteur (id_recruteur,prenom,nom,email,photo,libelle_entreprise,mot_de_passe) VALUES
+(1,'Homer', 'Simpson', 'homer@gmail.com', null,'CEGID','azer'),
+(2,'Eric', 'Cartman', 'eric@gmail.com', null,'DALKIA','123456'),
+(3,'Jake', 'Peralta', 'jake@gmail.com', null, 'INESCRM','azertyuiop');
 
 
 
-INSERT INTO offre (id_offre,titre,reference,nom_entreprise,date_creation,date_fin_validite,description,ville,niveau_diplome_vise,id_recruteur)
+INSERT INTO offre (id_offre,titre,reference,nom_entreprise,date_creation,date_fin_validite,description,ville,niveau_diplome_vise,id_recruteur,logo,profil_souhaite,profil_minimum,connaissance_necessaires,outils_necessaires,salaire_indicatif)
 VALUES
     (1,
     ' Gestionnaire Souscriptions- Marseille H/F',
@@ -17,7 +17,14 @@ VALUES
     - Vous intégrez un BTS dans le domaine de l''assurance. - Vous possédez le sens de l''écoute, du service, et de la pédagogie. - Vous êtes sensible au bien commun, à l''écoute et au travail d''équipe. - Vous savez vous adapter et progresser rapidement.',
     'Lyon',
     'Bac +5',
-    2),
+    2,
+    'https://www.referenseo.com/',
+    'Bac +3',
+    'Bac +2 avec au moins 5 ans d''experience',
+    'Language JAVA et Javascript',
+    'Pas d''outils spécifiques demandés',
+    28000
+    ),
     (2,
     'Chargé de Qualité Sécurité Evènementiel - Alternance H/F',
     '611954/200917',
@@ -28,7 +35,14 @@ VALUES
     - Vous intégrez un BTS dans le domaine de l''assurance.',
     'Paris',
     'Bac +3',
-    1),
+    1,
+    'https://www.referenseo.com/',
+    'Bac +3',
+    'Bac +2 avec au moins 5 ans d''experience',
+    'Language C++ , C#',
+    'Pas d''outils spécifiques demandés',
+    35000
+    ),
     (3,
     'Caviste H/F',
     '078954/438717',
@@ -39,4 +53,12 @@ VALUES
     - Vous intégrez un BTS dans le domaine de l''oenologie.',
     'Bordeaux',
     'Bac +3',
-    2);
+    2,
+    'https://www.referenseo.com/',
+    'Bac +3',
+    'Bac +2 avec au moins 5 ans d''experience dans un domaine viticole',
+    'Termes viticoles',
+    'Moyen de locomotion',
+    25000
+    );
+
