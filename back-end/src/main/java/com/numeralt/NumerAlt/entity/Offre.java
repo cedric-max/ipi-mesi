@@ -20,32 +20,30 @@ public class Offre {
 
     @Id
     @GeneratedValue( strategy= GenerationType.IDENTITY )
-    private Long id_offre;
+    private Long idOffre;
 
     private String reference;
 
     private String titre;
 
-    private String nom_entreprise;
+    private String nomEntreprise;
 
-    private Date date_creation;
+    private Date dateCreation;
 
-    private Date date_fin_validite;
+    private Date dateFinValidite;
 
     private String description;
 
     private String ville;
 
-    private String niveau_diplome_vise;
+    private String niveauDiplomeVise;
 
-   // GETTER AND SETTER
-
-    public Long getId_offre() {
-        return id_offre;
+    public Long getIdOffre() {
+        return idOffre;
     }
 
-    public void setId_offre(Long offerId) {
-        this.id_offre = offerId;
+    public void setIdOffre(Long offerId) {
+        this.idOffre = offerId;
     }
 
     public String getReference() {
@@ -64,28 +62,28 @@ public class Offre {
         this.titre = title;
     }
 
-    public String getNom_entreprise() {
-        return nom_entreprise;
+    public String getNomEntreprise() {
+        return nomEntreprise;
     }
 
-    public void setNom_entreprise(String companyName) {
-        this.nom_entreprise = companyName;
+    public void setNomEntreprise(String companyName) {
+        this.nomEntreprise = companyName;
     }
 
-    public Date getDate_creation() {
-        return date_creation;
+    public Date getDateCreation() {
+        return dateCreation;
     }
 
-    public void setDate_creation(Date createdOn) {
-        this.date_creation = createdOn;
+    public void setDateCreation(Date createdOn) {
+        this.dateCreation = createdOn;
     }
 
-    public Date getDate_fin_validite() {
-        return date_fin_validite;
+    public Date getDateFinValidite() {
+        return dateFinValidite;
     }
 
-    public void setDate_fin_validite(Date endsOn) {
-        this.date_fin_validite = endsOn;
+    public void setDateFinValidite(Date endsOn) {
+        this.dateFinValidite = endsOn;
     }
 
     public String getDescription() {
@@ -104,11 +102,11 @@ public class Offre {
         this.ville = city;
     }
 
-    public String getNiveau_diplome_vise() {
-        return niveau_diplome_vise;
+    public String getNiveauDiplomeVise() {
+        return niveauDiplomeVise;
     }
 
-    public void setNiveau_diplome_vise(String diplomaLevel) {
-        this.niveau_diplome_vise = diplomaLevel;
+    public void setNiveauDiplomeVise(String diplomaLevel) {
+        this.niveauDiplomeVise = diplomaLevel;
     }
 }

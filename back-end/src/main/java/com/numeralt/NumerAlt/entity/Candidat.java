@@ -1,10 +1,10 @@
 package com.numeralt.NumerAlt.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name="candidat")
 public class Candidat {
 
     @Id
@@ -17,12 +17,12 @@ public class Candidat {
   `photo` VARCHAR(100) NULL,
   `date_naissance` DATE NOT NULL,
   `adresse` VARCHAR(100) NOT NULL,
-  `permis de conduire` TINYINT NOT NULL,
+  `permis_conduire` TINYINT NOT NULL,
   `soft_skills` VARCHAR(200) NULL,
   `centres_interet` VARCHAR(200) NULL,
   `site_internet` VARCHAR(75) NULL,
   `lien_github` VARCHAR(75) NULL,*/
-    private Long id_candidat;
+    private Long idCandidat;
 
     private String prenom;
 
@@ -32,28 +32,32 @@ public class Candidat {
 
     private String photo;
 
-    private Date date_naissance;
+    private Date dateNaissance;
 
     private String adresse;
 
-    private String permis_de_conduire;
+    private String permisConduire;
 
     private String softSkills;
 
-    private String centres_interet;
+    private String centresInteret;
 
     private String site_internet;
 
-    private String lien_github;
+    private String lienGithub;
+
+    private String motDePasse;
+
+    private String role;
 
     //GETTER AND SETTER
 
-    public Long getId_candidat() {
-        return id_candidat;
+    public Long getIdCandidat() {
+        return idCandidat;
     }
 
-    public void setId_candidat(Long id_candidat) {
-        this.id_candidat = id_candidat;
+    public void setIdCandidat(Long idCandidat) {
+        this.idCandidat = idCandidat;
     }
 
     public String getPrenom() {
@@ -88,12 +92,12 @@ public class Candidat {
         this.photo = photo;
     }
 
-    public Date getDate_naissance() {
-        return date_naissance;
+    public Date getDateNaissance() {
+        return dateNaissance;
     }
 
-    public void setDate_naissance(Date date_naissance) {
-        this.date_naissance = date_naissance;
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public String getAdresse() {
@@ -104,12 +108,12 @@ public class Candidat {
         this.adresse = adresse;
     }
 
-    public String getPermis_de_conduire() {
-        return permis_de_conduire;
+    public String getPermisConduire() {
+        return permisConduire;
     }
 
-    public void setPermis_de_conduire(String permis_de_conduire) {
-        this.permis_de_conduire = permis_de_conduire;
+    public void setPermisConduire(String permisConduire) {
+        this.permisConduire = permisConduire;
     }
 
     public String getSoftSkills() {
@@ -120,12 +124,12 @@ public class Candidat {
         this.softSkills = softSkills;
     }
 
-    public String getCentres_interet() {
-        return centres_interet;
+    public String getCentresInteret() {
+        return centresInteret;
     }
 
-    public void setCentres_interet(String centres_interet) {
-        this.centres_interet = centres_interet;
+    public void setCentresInteret(String centresInteret) {
+        this.centresInteret = centresInteret;
     }
 
     public String getSite_internet() {
@@ -136,11 +140,27 @@ public class Candidat {
         this.site_internet = site_internet;
     }
 
-    public String getLien_github() {
-        return lien_github;
+    public String getLienGithub() {
+        return lienGithub;
     }
 
-    public void setLien_github(String lien_github) {
-        this.lien_github = lien_github;
+    public void setLienGithub(String lienGithub) {
+        this.lienGithub = lienGithub;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

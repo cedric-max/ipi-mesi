@@ -1,9 +1,9 @@
 package com.numeralt.NumerAlt.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="recruteur")
 public class Recruteur {
 
     /*
@@ -16,7 +16,7 @@ public class Recruteur {
   PRIMARY KEY (`id_recruteur`));*/
     @Id
     @GeneratedValue( strategy= GenerationType.IDENTITY )
-    private Long id_recruteur;
+    private Long idRecruteur;
 
     private String prenom;
 
@@ -24,19 +24,18 @@ public class Recruteur {
 
     private String email;
 
+    private String motDePasse;
+
     private String photo;
 
-    private String libelle_entreprise;
+    private String libelleEntreprise;
 
-    //GETTER AND SETTER
-
-
-    public Long getId_recruteur() {
-        return id_recruteur;
+    public Long getIdRecruteur() {
+        return idRecruteur;
     }
 
-    public void setId_recruteur(Long id_recruteur) {
-        this.id_recruteur = id_recruteur;
+    public void setIdRecruteur(Long idRecruteur) {
+        this.idRecruteur = idRecruteur;
     }
 
     public String getPrenom() {
@@ -63,6 +62,14 @@ public class Recruteur {
         this.email = email;
     }
 
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
     public String getPhoto() {
         return photo;
     }
@@ -71,11 +78,11 @@ public class Recruteur {
         this.photo = photo;
     }
 
-    public String getLibelle_entreprise() {
-        return libelle_entreprise;
+    public String getLibelleEntreprise() {
+        return libelleEntreprise;
     }
 
-    public void setLibelle_entreprise(String libelle_entreprise) {
-        this.libelle_entreprise = libelle_entreprise;
+    public void setLibelleEntreprise(String libelleEntreprise) {
+        this.libelleEntreprise = libelleEntreprise;
     }
 }
