@@ -11,7 +11,7 @@
             md="4"
             sm="6"
           >
-            <OfferCard  v-bind:titre="post.titre" v-bind:ville="post.ville" v-bind:entreprise="post.nom_entreprise" v-bind:description="post.description" v-bind:offerId="post.id_offre"></OfferCard>
+            <OfferCard  v-bind:titre="post.titre" v-bind:ville="post.ville" v-bind:entreprise="post.nom_entreprise" v-bind:description="post.description" v-bind:offerId="post.idOffre"></OfferCard>
           </v-col>
         </v-row>
       </v-container>
