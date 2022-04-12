@@ -1,21 +1,32 @@
 <template>
-  <v-app>
-    <!-- Must have the app property -->
-    <v-app-bar app></v-app-bar>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <!--  -->
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Application</v-toolbar-title>
+    </v-app-bar>
+
     <v-main>
-      <v-container>
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
 // @ is an alias to /src
-// import Navbar from './components/NavBar.vue'
 export default {
   name: 'Home',
-  components: {}
+  components: {
+
+  },
+  data: () => ({ drawer: null })
 }
 </script>
 
