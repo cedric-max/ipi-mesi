@@ -3,47 +3,60 @@ package com.numeralt.NumerAlt.entity;
 import javax.persistence.*;
 import java.util.Date;
 
-
-@Entity @Table(name = "offre")
+@Entity
+@Table(name = "offre")
 public class Offre {
 
-     /* `id_offre` INT NOT NULL AUTO_INCREMENT,
-  `titre` VARCHAR(45) NOT NULL,
-  `reference` VARCHAR(45) NOT NULL,
-  `nom_entreprise` VARCHAR(45) NOT NULL,
-  `date_creation` DATETIME NOT NULL,
-  `date_fin_validite` DATE NULL,
-  `description` VARCHAR(45) NOT NULL,
-  `ville` VARCHAR(45) NOT NULL,
-  `niveau_diplome_vise` VARCHAR(45) NULL,
-  `id_recruteur` INT NOT NULL,*/
-
     @Id
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_offre")
     private Long idOffre;
 
     private String reference;
 
     private String titre;
 
+    @Column(name = "nom_entreprise")
     private String nomEntreprise;
 
+    @Column(name = "date_creation")
     private Date dateCreation;
 
+    @Column(name = "date_fin_validite")
     private Date dateFinValidite;
 
     private String description;
 
     private String ville;
 
+    @Column(name = "niveau_diplome_vise")
     private String niveauDiplomeVise;
+
+    private String logo;
+
+    @Column(name = "profil_souhaite")
+    private String profilSouhaite;
+
+    @Column(name = "profil_minimum")
+    private String profilMinimum;
+
+    @Column(name = "connaissance_necessaire")
+    private String connaissancesNecessaires;
+
+    @Column(name = "outil_necessaire")
+    private String outilsNecessaires;
+
+    @Column(name = "salaire_indicatif")
+    private Integer salaireIndicatif;
+
+    // GETTER AND SETTER
 
     public Long getIdOffre() {
         return idOffre;
     }
 
-    public void setIdOffre(Long offerId) {
-        this.idOffre = offerId;
+    public void setIdOffre(Long idOffre) {
+        this.idOffre = idOffre;
     }
 
     public String getReference() {
@@ -58,32 +71,32 @@ public class Offre {
         return titre;
     }
 
-    public void setTitre(String title) {
-        this.titre = title;
+    public void setTitre(String titre) {
+        this.titre = titre;
     }
 
     public String getNomEntreprise() {
         return nomEntreprise;
     }
 
-    public void setNomEntreprise(String companyName) {
-        this.nomEntreprise = companyName;
+    public void setNomEntreprise(String nomEntreprise) {
+        this.nomEntreprise = nomEntreprise;
     }
 
     public Date getDateCreation() {
         return dateCreation;
     }
 
-    public void setDateCreation(Date createdOn) {
-        this.dateCreation = createdOn;
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
     }
 
     public Date getDateFinValidite() {
         return dateFinValidite;
     }
 
-    public void setDateFinValidite(Date endsOn) {
-        this.dateFinValidite = endsOn;
+    public void setDateFinValidite(Date dateFinValidite) {
+        this.dateFinValidite = dateFinValidite;
     }
 
     public String getDescription() {
@@ -98,15 +111,63 @@ public class Offre {
         return ville;
     }
 
-    public void setVille(String city) {
-        this.ville = city;
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public String getNiveauDiplomeVise() {
         return niveauDiplomeVise;
     }
 
-    public void setNiveauDiplomeVise(String diplomaLevel) {
-        this.niveauDiplomeVise = diplomaLevel;
+    public void setNiveauDiplomeVise(String niveauDiplomeVise) {
+        this.niveauDiplomeVise = niveauDiplomeVise;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public String getProfilSouhaite() {
+        return profilSouhaite;
+    }
+
+    public void setProfilSouhaite(String profilSouhaite) {
+        this.profilSouhaite = profilSouhaite;
+    }
+
+    public String getProfilMinimum() {
+        return profilMinimum;
+    }
+
+    public void setProfilMinimum(String profilMinimum) {
+        this.profilMinimum = profilMinimum;
+    }
+
+    public String getConnaissancesNecessaires() {
+        return connaissancesNecessaires;
+    }
+
+    public void setConnaissancesNecessaires(String connaissancesNecessaires) {
+        this.connaissancesNecessaires = connaissancesNecessaires;
+    }
+
+    public String getOutilsNecessaires() {
+        return outilsNecessaires;
+    }
+
+    public void setOutilsNecessaires(String outilsNecessaires) {
+        this.outilsNecessaires = outilsNecessaires;
+    }
+
+    public Integer getSalaireIndicatif() {
+        return salaireIndicatif;
+    }
+
+    public void setSalaireIndicatif(Integer salaireIndicatif) {
+        this.salaireIndicatif = salaireIndicatif;
     }
 }

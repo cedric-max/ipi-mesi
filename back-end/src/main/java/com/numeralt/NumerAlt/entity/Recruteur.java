@@ -3,19 +3,12 @@ package com.numeralt.NumerAlt.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="recruteur")
+@Table(name = "recruteur")
 public class Recruteur {
 
-    /*
-    * `id_recruteur` INT NOT NULL AUTO_INCREMENT,
-  `prenom` VARCHAR(45) NOT NULL,
-  `nom` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `photo` VARCHAR(100) NULL,
-  `libelle_entreprise` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_recruteur`));*/
     @Id
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_recruteur")
     private Long idRecruteur;
 
     private String prenom;
@@ -24,11 +17,12 @@ public class Recruteur {
 
     private String email;
 
-    private String motDePasse;
-
     private String photo;
 
+    @Column(name = "libelle_entreprise")
     private String libelleEntreprise;
+
+    private String motDePasse;
 
     public Long getIdRecruteur() {
         return idRecruteur;
@@ -62,14 +56,6 @@ public class Recruteur {
         this.email = email;
     }
 
-    public String getMotDePasse() {
-        return motDePasse;
-    }
-
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
-    }
-
     public String getPhoto() {
         return photo;
     }
@@ -84,5 +70,13 @@ public class Recruteur {
 
     public void setLibelleEntreprise(String libelleEntreprise) {
         this.libelleEntreprise = libelleEntreprise;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
     }
 }

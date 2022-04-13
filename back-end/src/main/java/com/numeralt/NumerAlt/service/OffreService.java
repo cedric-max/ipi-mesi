@@ -17,10 +17,10 @@ public class OffreService implements OffreServiceInterface {
     private OffreRepositoryInterface offreRepository;
 
     @Override
-    public Optional<Offre>findById(Long id_offre) {
-        Optional<Offre> offre = offreRepository.findById(id_offre);
+    public Optional<Offre>findById(Long idOffre) {
+        Optional<Offre> offre = offreRepository.findById(idOffre);
         if (offre.isEmpty()) {
-            throw new EntityNotFoundException("L'offre avec l'identifiant " + id_offre + " n'existe pas !");
+            throw new EntityNotFoundException("L'offre avec l'identifiant " + idOffre + " n'existe pas !");
         }
         return offre;
     }

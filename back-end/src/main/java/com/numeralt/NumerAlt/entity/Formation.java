@@ -4,28 +4,36 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="formation")
+@Table(name = "formation")
 public class Formation {
     /*
-    * `id_formation` INT NOT NULL AUTO_INCREMENT,
-  `date_debut` DATE NOT NULL,
-  `date_fin` DATE NOT NULL,
-  `libelle_formation` VARCHAR(100) NOT NULL,
-  `description_formation` VARCHAR(100) NULL,
-  `ecole` VARCHAR(45) NOT NULL,*/
+     * `id_formation` INT NOT NULL AUTO_INCREMENT,
+     * `date_debut` DATE NOT NULL,
+     * `date_fin` DATE NOT NULL,
+     * `libelle_formation` VARCHAR(100) NOT NULL,
+     * `description_formation` VARCHAR(100) NULL,
+     * `ecole` VARCHAR(45) NOT NULL,
+     */
     @Id
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_formation")
     private Long idFormation;
 
+    @Column(name = "date_debut")
     private Date dateDebut;
 
+    @Column(name = "date_fin")
     private Date dateFin;
 
+    @Column(name = "libelle_formation")
     private String libelleFormation;
 
+    @Column(name = "description_formation")
     private String descriptionFormation;
 
     private String ecole;
+
+    // GETTER AND SETTER
 
     public Long getIdFormation() {
         return idFormation;

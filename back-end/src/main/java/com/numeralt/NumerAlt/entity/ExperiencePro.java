@@ -4,33 +4,38 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="experiencePro")
+@Table(name = "experiencePro")
 public class ExperiencePro {
 
     /*
-    * `id_experience_pro` INT NOT NULL AUTO_INCREMENT,
-  `date_debut` VARCHAR(45) NOT NULL,
-  `date_fin` VARCHAR(45) NOT NULL,
-  `entreprise` VARCHAR(45) NOT NULL,
-  `libelle_experience` VARCHAR(45) NOT NULL,
-  `description_experience` VARCHAR(200) NOT NULL,*/
+     * `id_experience_pro` INT NOT NULL AUTO_INCREMENT,
+     * `date_debut` VARCHAR(45) NOT NULL,
+     * `date_fin` VARCHAR(45) NOT NULL,
+     * `entreprise` VARCHAR(45) NOT NULL,
+     * `libelle_experience` VARCHAR(45) NOT NULL,
+     * `description_experience` VARCHAR(200) NOT NULL,
+     */
 
     @Id
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_experience_pro")
     private Long idExperiencePro;
 
+    @Column(name = "date_debut")
     private Date dateDebut;
 
+    @Column(name = "date_fin")
     private Date dateFin;
 
+    @Column(name = "libelle_experience")
     private String libelleExperience;
 
+    @Column(name = "description_experience")
     private String descriptionExperience;
 
     private String entreprise;
 
-    //GETTER AND SETTER
-
+    // GETTER AND SETTER
 
     public Long getIdExperiencePro() {
         return idExperiencePro;

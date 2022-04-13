@@ -4,24 +4,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="candidat")
+@Table(name = "candidat")
 public class Candidat {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-/*
-* `id_candidat` INT NOT NULL AUTO_INCREMENT,
-  `prenom` VARCHAR(45) NOT NULL,
-  `nom` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `photo` VARCHAR(100) NULL,
-  `date_naissance` DATE NOT NULL,
-  `adresse` VARCHAR(100) NOT NULL,
-  `permis_conduire` TINYINT NOT NULL,
-  `soft_skills` VARCHAR(200) NULL,
-  `centres_interet` VARCHAR(200) NULL,
-  `site_internet` VARCHAR(75) NULL,
-  `lien_github` VARCHAR(75) NULL,*/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_candidat")
     private Long idCandidat;
 
     private String prenom;
@@ -31,26 +19,24 @@ public class Candidat {
     private String email;
 
     private String photo;
-
+    @Column(name = "date_naissance")
     private Date dateNaissance;
 
     private String adresse;
-
-    private String permisConduire;
-
+    @Column(name = "permis_conduire")
+    private String permisDeConduire;
+    @Column(name = "soft_skills")
     private String softSkills;
-
+    @Column(name = "centres_interet")
     private String centresInteret;
-
-    private String site_internet;
-
+    @Column(name = "site_internet")
+    private String siteInternet;
+    @Column(name = "lien_github")
     private String lienGithub;
-
+    @Column(name = "mot_de_passe")
     private String motDePasse;
 
-    private String role;
-
-    //GETTER AND SETTER
+    // GETTER AND SETTER
 
     public Long getIdCandidat() {
         return idCandidat;
@@ -108,12 +94,12 @@ public class Candidat {
         this.adresse = adresse;
     }
 
-    public String getPermisConduire() {
-        return permisConduire;
+    public String getPermisDeConduire() {
+        return permisDeConduire;
     }
 
-    public void setPermisConduire(String permisConduire) {
-        this.permisConduire = permisConduire;
+    public void setPermisDeConduire(String permisDeConduire) {
+        this.permisDeConduire = permisDeConduire;
     }
 
     public String getSoftSkills() {
@@ -132,12 +118,12 @@ public class Candidat {
         this.centresInteret = centresInteret;
     }
 
-    public String getSite_internet() {
-        return site_internet;
+    public String getSiteInternet() {
+        return siteInternet;
     }
 
-    public void setSite_internet(String site_internet) {
-        this.site_internet = site_internet;
+    public void setSiteInternet(String siteInternet) {
+        this.siteInternet = siteInternet;
     }
 
     public String getLienGithub() {
@@ -154,13 +140,5 @@ public class Candidat {
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }
